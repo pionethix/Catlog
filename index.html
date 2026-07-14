@@ -48,6 +48,16 @@
     <aside class="search-overlay" id="searchOverlay" aria-hidden="true"><button class="close-search" aria-label="Close search">×</button><div><p class="eyebrow">SEARCH THE CATALOG</p><input id="overlaySearch" autofocus placeholder="What are you looking for?" /><p class="search-hint">Search by product, brand, model or specification</p><div class="search-results" id="searchResults"></div></div></aside>
     <div class="modal-backdrop" id="modalBackdrop"></div><dialog class="product-modal" id="productModal"><button class="modal-close" aria-label="Close product details">×</button><div id="modalContent"></div></dialog>
     <a class="mobile-whatsapp" href="https://wa.me/971585008564" target="_blank" rel="noopener">◔ Request price on WhatsApp</a>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="app.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function (user) {
+          if (!user && location.hash.includes("recovery_token")) {
+            window.netlifyIdentity.open("recover");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
