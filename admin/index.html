@@ -4,6 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CATLOG Content Manager</title>
+    <script>
+      if (location.hash.includes("recovery_token=") || location.hash.includes("confirmation_token=")) {
+        location.hash = location.hash;
+      }
+    </script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
