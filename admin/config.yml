@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "catalog"
+    label: "Catalog"
+    files:
+      - name: "products"
+        label: "Products"
+        file: "data/products.json"
+        format: "json"
+        fields:
+          - label: "WhatsApp number"
+            name: "whatsappNumber"
+            widget: "string"
+            hint: "International format. Example: +971 585008564"
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.brand}}"
+            fields:
+              - {label: "ID", name: "id", widget: "string", hint: "Unique lowercase ID, e.g. dell-latitude-7450"}
+              - {label: "Product name", name: "name", widget: "string"}
+              - {label: "Brand", name: "brand", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Model number", name: "model", widget: "string"}
+              - {label: "Condition", name: "condition", widget: "select", options: ["New", "Refurbished"]}
+              - {label: "Card label", name: "tag", widget: "string", required: false}
+              - {label: "Product image", name: "image", widget: "image"}
+              - {label: "Description", name: "description", widget: "text"}
+              - label: "Specifications"
+                name: "specs"
+                widget: "list"
+                field: {label: "Specification", name: "spec", widget: "string"}
