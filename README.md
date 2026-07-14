@@ -17,6 +17,6 @@ Open `data/products.json`. Set `whatsappNumber` to your WhatsApp number in inter
 1. Create a new Git repository and push this project.
 2. In Netlify, select **Add new site → Import an existing project**.
 3. Choose the repository. Netlify detects `netlify.toml`; no build command is needed.
-4. Set your site domain, then replace `your-domain.com` in `robots.txt` and `sitemap.xml`.
+4. If you use the Netlify subdomain, `it-catlog.netlify.app`, the repo is already configured. If you switch to a custom domain later, update `robots.txt`, `sitemap.xml`, and the canonical/Open Graph URLs in `index.html`.
 
 For a larger catalog, migrate the `products` array to one JSON file per category or connect Decap CMS to a Git provider; the UI can keep the same fields.
